@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <H1>COMPONENTE USUARIO RANDOM</H1>
+
+    <ng-container *ngIf="randContacts; else noContact">
+      <mat-card>
+        <mat-card class="random-contact-card">
+          <mat-card-header>
+             <div mat-card-avatar>
+                <img [src]="randContacts.picture.medium" alt="">
+             </div> 
+            <mat-card-title>
+              {{ randContacts.name.first }}
+              {{ randContacts.name.last }}
+            </mat-card-title>
+            <mat-card-subtitle>{{ randContacts.email }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>pais: {{ randContacts.location.country }}</p>
+            <p>ciudad: {{ randContacts.location.city }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Elejir como amigo invisible</button>
+            <button mat-button>volver</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-card>
+    </ng-container>
+    <ng-template #noContact>
+      <p>cargando contacto.....</p>
+      <mat-spinner></mat-spinner>
+    </ng-template>
+  </body>
+</html>

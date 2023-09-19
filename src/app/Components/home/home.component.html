@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Juego del amigo invisible</h1>
+    <h3>Bienvenido!</h3>
+
+    <!-- hacer un login -->
+    <!--     <a *ngIf="!token" style="margin: 5px" routerLink="/login">IR A login</a>
+ -->
+    <ng-container *ngIf="contactoSelecionado; else templateAmigo">
+      <h3 *ngIf="contactoSelecionado">
+        Amigo invisible:
+        <b style="color: blue">{{ contactoSelecionado.name.first }}</b>
+      </h3>
+    </ng-container>
+    <ng-template #templateAmigo>
+      <p>selecciona a tu amigo invisible</p>
+    </ng-template>
+
+    
+      <div class="cont-bu">
+        <button class="buttonex" (click)="navegarAContacst()">
+          <span>Lista Amigos</span>
+        </button>
+      </div>
+    
+    <!-- crear un query params -->
+    <!-- <a  [routerLink]="['/dash/contacto']" [queryParams]="{sexo: 'hola'}">detalles</a> -->
+
+    <div class="butn">
+      <div>
+        <p *ngIf="token">Filtros:</p>
+        <div class="butn-a">
+          <a
+          *ngIf="token"
+          [routerLink]="['/dash/contacto']"
+          [queryParams]="{ sexo: 'female' }"
+          >Amigas</a
+        >
+        <a
+          *ngIf="token"
+          [routerLink]="['/dash//contacto']"
+          [queryParams]="{ sexo: 'male' }"
+          >Amigos</a
+        >
+        
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

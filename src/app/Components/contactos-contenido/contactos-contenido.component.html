@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ng-container *ngIf="constacto; else errorContacto">
+        <h1>contacto: {{id}}</h1>
+    
+        <h2>Nombre: {{constacto | nombreCompleto}} </h2>
+        <h2>Email: {{constacto.email}}  </h2>
+       
+    </ng-container>
+    
+    <ng-template #errorContacto>
+        <p style="margin-top: 25px;" >error en el contacto, no existe</p>
+    </ng-template>
+    
+    <a [routerLink]="['/dash/contacto']" [queryParams]="{sexo: filtro}">volver</a>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="spiner">
+      <h1>TUS CONTACTOS</h1>
+      <!-- SPINER CARGANDO -->
+      <div *ngIf="cargando">
+        <mat-spinner></mat-spinner>
+        <h6>cargando..</h6>
+      </div>
+    </div>
+
+    <!-- todo: listar los contactos y poder navegar al pinchar en uno de ellos -->
+    <div *ngFor="let random of listarandomContat; let i = index">
+      <div class="formato-l">
+        <h6
+          routerLink="/dash/contacto/{{ random.id.name }}"
+          class="contacto"
+          [state]="{ conta: random, filtro: filtrosexo }"
+        >
+          {{ random.name.first }} {{ random.name.last }}
+        </h6>
+        <button mat-raised-button color="primary" (click)="voverAHome(random)">
+          seleccionar {{ random.name.first }}
+        </button>
+      </div>
+    </div>
+    <ng-container
+      *ngIf="filtrosexo == 'female' || filtrosexo == 'male'; else vamal"
+    >
+      <p>mostrando lista filtrada por: {{ filtrosexo }}</p>
+    </ng-container>
+    <ng-template #vamal>
+      <p>Lista Completa</p>
+    </ng-template>
+    
+      <div class="butn-a">
+        <a  [routerLink]="['/dash']">volver</a>
+      </div>
+   
+   
+   
+  </body>
+</html>

@@ -1,0 +1,17 @@
+//Estilos para niveles de tareas
+h5 {
+    letter-spacing: 1px;
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-bottom: 1px solid #171717;
+  }
+.urgent-task {
+    color: orange;
+  }
+  .bloking-task {
+    color: rgb(217, 20, 20);
+  }
+  .info-task {
+    color: rgb(23, 27, 246);
+  }

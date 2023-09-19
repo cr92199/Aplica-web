@@ -1,0 +1,27 @@
+<h1>LISTA DE MOVIE</h1>
+
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Title</th>
+        <th scope="col">overview</th>
+        <th scope="col">langue</th>
+        <th scope="col">Img</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let movie of lisM">
+      <tr>
+        <th scope="row">{{ movie.id }}</th>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.overview }}</td>
+        <td>{{ movie.original_language }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="boton">
+    <button type="button" (click)="NextP()">siguiente</button>
+    <button type="button" (click)="aftP()">atras</button>
+  </div>
+</div>

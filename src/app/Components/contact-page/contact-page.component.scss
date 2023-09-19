@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contacto {
+    font-size: 25px;
+    margin: 12px 80px;
+}
+.contacto:hover {
+    color: #cb2828
+}
+.formato-l{
+    display: flex;
+    justify-content: center;
+   
+}
+
+.spiner{
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+h6 {
+    width: 200px;
+}
+button {
+    width: 180px;
+    margin: 15px 25px 15px 0;
+}
+
+a{
+    color: blue;
+    display: flex;
+    flex-flow: column wrap;
+    text-decoration: none;
+    border: 2px solid #333;
+    padding: 5px;
+    margin:  5px ;
+    background-color: #33333386;
+    
+}
+
+
+.butn-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    
+}
